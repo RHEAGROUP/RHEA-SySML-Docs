@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<MDG.Technology version="1.0"><Documentation id="7777" name="RHEADoc" version="1.0" notes="first issue"/><UMLProfiles><UMLProfile profiletype="uml2">
+			<Documentation id="E075D452-B" name="RHEADoc" version="1.0" notes="RHEADoc"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="Applicability" metatype="Applicabity" notes="" cx="0" cy="0">
+						<AppliesTo>
+							<Apply type="Dependency">
+								<Property name="_MeaningBackwards" value="Applicable to"/>
+								<Property name="_MeaningForwards" value="Depend by"/>
+								<Property name="direction" value="Source -&gt; Destination"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="Describe" metatype="Describe" notes="" cx="0" cy="0">
+						<AppliesTo>
+							<Apply type="Dependency">
+								<Property name="_MeaningBackwards" value="Is Described by"/>
+								<Property name="_MeaningForwards" value="Describes"/>
+								<Property name="direction" value="Source -&gt; Destination"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="ESADocument" notes="" cx="0" cy="0" generalizes="GenericDocument" baseStereotypes="GenericDocument">
+						<stereotypedrelationships>
+							<stereotypedrelationship stereotype="RHEADoc::Applicability" constraint="RHEADoc::ESADocument;RHEADoc::GenericDocument"/>
+							<stereotypedrelationship stereotype="RHEADoc::Reference" constraint="RHEADoc::ESADocument;RHEADoc::GenericDocument"/>
+						</stereotypedrelationships>
+						<TaggedValues>
+							<Tag name="Document Type" type="enumeration" description="" unit="" values="CP,CR,DD,DN,IF,none,DRD,MAN,PO,RS,SOW,TN,TP,TR,TS" default=""/>
+							<Tag name="Issue" type="int" description="" unit="" values="" default=""/>
+							<Tag name="Revision" type="int" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="GenericDocument" notes="" cx="0" cy="0" generalizes="StandardProfileL2::Document" baseStereotypes="StandardProfileL2::Document">
+						<metaconstraints>
+							<metaconstraint umlRole="source" constraint="Interface;SysML1.4::block;SysML1.4::InterfaceBlock;SysML1.4::requirement;SysML1.4::ValueType"/>
+						</metaconstraints>
+						<stereotypedrelationships>
+							<stereotypedrelationship stereotype="RHEADoc::Applicability" constraint="RHEADoc::GenericDocument"/>
+							<stereotypedrelationship stereotype="RHEADoc::Describe" constraint="Interface;SysML1.4::block;SysML1.4::InterfaceBlock;SysML1.4::requirement;SysML1.4::ValueType"/>
+							<stereotypedrelationship stereotype="RHEADoc::Reference" constraint="RHEADoc::GenericDocument"/>
+						</stereotypedrelationships>
+						<TaggedValues>
+							<Tag name="DocumentLink" type="" description="" unit="" values="" default=""/>
+							<Tag name="IssueDate" type="" description="" unit="" values="" default=""/>
+							<Tag name="Reference" type="char" description="" unit="" values="" default=""/>
+							<Tag name="Version" type="char" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Reference" metatype="Reference" notes="" cx="0" cy="0">
+						<AppliesTo>
+							<Apply type="Dependency">
+								<Property name="_MeaningBackwards" value="Referred By"/>
+								<Property name="_MeaningForwards" value="Refer to"/>
+								<Property name="direction" value="Source -&gt; Destination"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="RHEADocument" notes="" cx="0" cy="0" generalizes="GenericDocument" baseStereotypes="GenericDocument">
+						<stereotypedrelationships>
+							<stereotypedrelationship stereotype="RHEADoc::Applicability" constraint="RHEADoc::GenericDocument;RHEADoc::RHEADocument"/>
+							<stereotypedrelationship stereotype="RHEADoc::Reference" constraint="RHEADoc::GenericDocument;RHEADoc::RHEADocument"/>
+						</stereotypedrelationships>
+						<TaggedValues>
+							<Tag name="Document Type" type="enumeration" description="" unit="" values="CP,CR,DD,DN,IF,none,DRD,MAN,PO,RS,SOW,TN,TP,TR,TS" default=""/>
+							<Tag name="Issue" type="int" description="" unit="" values="" default=""/>
+							<Tag name="Revision" type="int" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
+			</Content>
+		</UMLProfile>
+	</UMLProfiles><TaggedValueTypes><RefData version="1.0" exporter="EA.25">
+			<DataSet name="Property Types" table="t_propertytypes" filter="Property='#Property#'"><DataRow><Column name="Property" value="IssueDate"/><Column name="Description" value="IssueDate"/><Column name="Notes" value="Type=Date;"/></DataRow><DataRow><Column name="Property" value="DocumentLink"/><Column name="Notes" value="Type=URL;"/></DataRow></DataSet></RefData></TaggedValueTypes><DiagramProfile><UMLProfile profiletype="uml2">
+			<Documentation id="948E8497-5" name="RHEADoc" version="1.0" notes="RHEADoc"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="DocumentationTree" notes="" cx="108" cy="70">
+						<AppliesTo>
+							<Apply type="Diagram_Component">
+								<Property name="alias" value="Documentation Tree"/>
+								<Property name="toolbox" value="RHEADoc"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
+			</Content>
+		</UMLProfile>
+	</DiagramProfile><UIToolboxes><UMLProfile profiletype="uml2">
+			<Documentation id="EB6BBE06-2" name="RHEADoc" version="1.0" notes="RHEADoc"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="Document Detail" notes="" cx="268" cy="114">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="RHEADoc::Applicability(UML::Dependency)" type="" description="" unit="" values="" default="Applicability"/>
+							<Tag name="RHEADoc::Describe(UML::Dependency)" type="" description="" unit="" values="" default="Describes"/>
+							<Tag name="RHEADoc::ESADocument" type="" description="" unit="" values="" default="ESADocument"/>
+							<Tag name="RHEADoc::GenericDocument" type="" description="" unit="" values="" default="Generic Document"/>
+							<Tag name="RHEADoc::Reference(UML::Dependency)" type="" description="" unit="" values="" default="Reference"/>
+							<Tag name="RHEADoc::RHEADocument" type="" description="" unit="" values="" default="RHEADocument"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="SysMLMain" notes="" cx="145" cy="88">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="SysML1.4::Block" type="" description="" unit="" values="" default=""/>
+							<Tag name="SysML1.4::InterfaceBlock" type="" description="" unit="" values="" default=""/>
+							<Tag name="SysML1.4::requirement" type="" description="" unit="" values="" default=""/>
+							<Tag name="SysML1.4::ValueType" type="" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+				<ViewDefinitions/>
+				<Metamodel/>
+			</Content>
+		</UMLProfile>
+	</UIToolboxes></MDG.Technology>
